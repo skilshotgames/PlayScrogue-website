@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Nordic Light';
+  src: url('nordic-light.regular.ttf');
+}
+
+body {
+  font-family: 'Nordic Light', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .centered-content {
+    text-align: center;
+    z-index: 1;
+  } /*Centers the content*/
+
+  .top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+  }/*Puts items at the top left corner of the website*/
+  /* Slideshow styles */
+.slideshow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the slideshow behind other content */
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.445); 
+  z-index: 0; /* Place the overlay below the slideshow */
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+@media screen and (max-height: 450px) { /* Apply styles when the screen height is 450px or less */
+  /* Increase top padding for elements with class 'sidenav' */
+  .sidenav {padding-top: 15px;}
+  /* Increase font size for links within 'sidenav' */
+  .sidenav a {font-size: 18px;}
+}
